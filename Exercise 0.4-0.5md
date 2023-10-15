@@ -1,0 +1,50 @@
+# Exercise 0.4
+
+sequenceDiagram
+
+(Writing & clicking the Save button)
+
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+activate server
+server->>browser: GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+# Exercise 0.5
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: 
+    {
+        "content": "s",
+        "date": "2023-10-14T20:59:42.502Z"
+    },
+    {
+        "content": "Hello",
+        "date": "2023-10-14T21:00:09.269Z"
+    },
+    deactivate server
+
+
+
+# Exercise 0.6
+
+browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
